@@ -6,7 +6,7 @@ router.use((req, res) =>
   res.sendFile(path.join(__dirname, "test.html"))
 );
 
-router.use("/success", function(req, res) =>
+router.use("/success", (req, res) =>
   res.sendFile(path.join(__dirname, "success.html"))
 );
 
