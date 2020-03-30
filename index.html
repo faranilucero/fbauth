@@ -54,24 +54,26 @@
       	console.log('Successful login for: ' + response.name);
       	document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!<br />go to success <a href="/success">success page</a>';
-    	document.getElementById('logout').style.display = 'block';
+    	document.getElementById('logoutButton').style.display = 'block';
+    	document.getElementById('loginButton').style.dipslay = 'none';
     });
   }
 
   function logoutFb() {
 	FB.logout(function(response) {
 	   // Person is now logged out
-    	document.getElementById('logout').style.display = 'none';
+    	document.getElementById('logoutButton').style.display = 'none';
+    	document.getElementById('loginButton').style.dipslay = 'block';
 	});  	
   }
 
 </script>
 
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button id="loginButton" scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-&nbsp;&nbsp;<button style='display:none;' onClick="logoutFb();" id="logout">Logout</button>
+&nbsp;&nbsp;<button style='display:none;' onClick="logoutFb();" id="logoutButton">Logout</button>
 
 <div id="status">
 </div>
