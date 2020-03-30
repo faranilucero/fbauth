@@ -62,8 +62,7 @@
   function logoutFb() {
 	FB.logout(function(response) {
 	   // Person is now logged out
-    	document.getElementById('logoutButton').style.display = 'none';
-    	document.getElementById('loginButton').style.dipslay = 'block';
+	   self.location.href = self.location.href;
 	});  	
   }
 
