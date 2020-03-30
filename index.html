@@ -13,7 +13,6 @@
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
       testAPI();  
     } else {                                 // Not logged into your webpage or we are unable to tell.
-    	document.getElementById('logout').display = 'block';
     }
   }
 
@@ -55,14 +54,14 @@
       	console.log('Successful login for: ' + response.name);
       	document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!<br />go to success <a href="/success">success page</a>';
-    	document.getElementById('logout').display = 'block';
+    	document.getElementById('logout').style.display = 'block';
     });
   }
 
   function logoutFb() {
 	FB.logout(function(response) {
 	   // Person is now logged out
-    	document.getElementById('logout').display = 'none';
+    	document.getElementById('logout').style.display = 'none';
 	});  	
   }
 
